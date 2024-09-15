@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Insta Extensions",
+  "description": "This is a Chrome extension for Instagram",
+  "version": "1.0.0",
+  "permissions": ["tabs", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "./index.html",
+    "default_icon": "hello_extensions.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.instagram.com/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
